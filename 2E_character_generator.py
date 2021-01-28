@@ -13,34 +13,486 @@ from wizard import *
 from warrior import *
 from priest import *
 from rogue import *
+#from create_pdf_sheet import *
+#from chronomancer import *
 from nonWeaponProfs import *
+#from _classData import *
 
 charRace = ['Human', 'Half-Elf', 'Elf', 'Dwarf', 'Half-Orc', 'Halfling', 'Gnome']
 charClass = ['Fighter','Ranger','Wizard','Cleric','Druid','Thief','Bard','Paladin','Fighter/Thief',\
     'Fighter/Cleric','Fighter/Mage','Mage/Thief','Fighter/Illusionist','Cleric/Illusionist','Cleric/Thief',\
     'Illusionist/Thief','Fighter/Druid','Cleric/Ranger','Cleric/Mage','Druid/Mage','Fighter/Mage/Cleric',\
-    'Fighter/Mage/Druid','Fighter/Mage/Thief','Priest','Mage','Illusionist']
+    'Fighter/Mage/Druid','Fighter/Mage/Thief','Priest','Mage','Illusionist','Chronomancer','Temporal-Champion','Temporal-Raider']
 scores = [0,0,0,0,0,0]
 
 #--------------------------------------
 # Roll the digital dice and return
 #   ability scores
 #--------------------------------------
+
 def roll(scores):
-    scores[0] = random.randint(3,18)
-    scores[1] = random.randint(3,18)
-    scores[2] = random.randint(3,18)
-    scores[3] = random.randint(3,18)
-    scores[4] = random.randint(3,18)
-    scores[5] = random.randint(3,18)
+    return rollMethodVb(scores)
 
-    average = sum(scores) / len(scores)
-
-    if average < 8:
-        roll(scores)
+def rollMethodI(scores):
+    scores[0] = random.randint(1,6) + random.randint(1,6) + random.randint(1,6)
+    scores[1] = random.randint(1,6) + random.randint(1,6) + random.randint(1,6)
+    scores[2] = random.randint(1,6) + random.randint(1,6) + random.randint(1,6)
+    scores[3] = random.randint(1,6) + random.randint(1,6) + random.randint(1,6)
+    scores[4] = random.randint(1,6) + random.randint(1,6) + random.randint(1,6)
+    scores[5] = random.randint(1,6) + random.randint(1,6) + random.randint(1,6)
 
     #print(scores)
     return scores
+
+#--------------------------------------
+# Roll the digital dice and return
+#   ability scores
+#--------------------------------------
+def rollMethodVa(scores):
+
+    scores = [0,0,0,0,0,0]
+    die = [0,0,0,0]
+
+    while scores[0] < 8:
+        die[0] = random.randint(1,6)
+        die[1] = random.randint(1,6)
+        die[2] = random.randint(1,6)
+        die[3] = random.randint(1,6)
+        die.sort
+        scores[0] = die[1] + die[2] + die[3]
+
+    while scores[1] < 8:
+        die[0] = random.randint(1,6)
+        die[1] = random.randint(1,6)
+        die[2] = random.randint(1,6)
+        die[3] = random.randint(1,6)
+        die.sort
+        scores[1] = die[1] + die[2] + die[3]
+
+    while scores[2] < 8:
+        die[0] = random.randint(1,6)
+        die[1] = random.randint(1,6)
+        die[2] = random.randint(1,6)
+        die[3] = random.randint(1,6)
+        die.sort
+        scores[2] = die[1] + die[2] + die[3]
+
+    while scores[3] < 8:
+        die[0] = random.randint(1,6)
+        die[1] = random.randint(1,6)
+        die[2] = random.randint(1,6)
+        die[3] = random.randint(1,6)
+        die.sort
+        scores[3] = die[1] + die[2] + die[3]
+
+    while scores[4] < 8:
+        die[0] = random.randint(1,6)
+        die[1] = random.randint(1,6)
+        die[2] = random.randint(1,6)
+        die[3] = random.randint(1,6)
+        die.sort
+        scores[4] = die[1] + die[2] + die[3]
+
+    while scores[5] < 8:
+        die[0] = random.randint(1,6)
+        die[1] = random.randint(1,6)
+        die[2] = random.randint(1,6)
+        die[3] = random.randint(1,6)
+        die.sort
+        scores[5] = die[1] + die[2] + die[3]
+
+    #print(scores)
+    return scores
+
+
+def rollMethodVx(scores):
+
+    scores = [0,0,0,0,0,0]
+    die = [0,0,0,0]
+
+    scores[0] = 17
+    scores[1] = 13
+    scores[2] = 18
+    scores[3] = 15
+    scores[4] = 18
+    scores[5] = 10
+
+    print (scores)
+    return scores
+
+#--------------------------------------
+# Roll the digital dice and return
+#   ability scores
+#--------------------------------------
+def rollMethodVb(scores):
+
+        scores = [0,0,0,0,0,0]
+        die = [0,0,0,0]
+
+        while scores[0] < 8:
+            die[0] = random.randint(1,6)
+            die[1] = random.randint(1,6)
+            die[2] = random.randint(1,6)
+            die[3] = random.randint(1,6)
+            die.sort
+            scores[0] = die[1] + die[2] + die[3]
+
+        while scores[1] < 8:
+            die[0] = random.randint(1,6)
+            die[1] = random.randint(1,6)
+            die[2] = random.randint(1,6)
+            die[3] = random.randint(1,6)
+            die.sort
+            scores[1] = die[1] + die[2] + die[3]
+
+        while scores[2] < 8:
+            die[0] = random.randint(1,6)
+            die[1] = random.randint(1,6)
+            die[2] = random.randint(1,6)
+            die[3] = random.randint(1,6)
+            die.sort
+            scores[2] = die[1] + die[2] + die[3]
+
+        while scores[3] < 8:
+            die[0] = random.randint(1,6)
+            die[1] = random.randint(1,6)
+            die[2] = random.randint(1,6)
+            die[3] = random.randint(1,6)
+            die.sort
+            scores[3] = die[1] + die[2] + die[3]
+
+        while scores[4] < 8:
+            die[0] = random.randint(1,6)
+            die[1] = random.randint(1,6)
+            die[2] = random.randint(1,6)
+            die[3] = random.randint(1,6)
+            die.sort
+            scores[4] = die[1] + die[2] + die[3]
+
+        while scores[5] < 8:
+            die[0] = random.randint(1,6)
+            die[1] = random.randint(1,6)
+            die[2] = random.randint(1,6)
+            die[3] = random.randint(1,6)
+            die.sort
+            scores[5] = die[1] + die[2] + die[3]
+
+        #print(scores)
+        return scores
+
+
+
+
+#--------------------------------------
+# Roll the digital dice and return
+#   ability scores
+#--------------------------------------
+def rollMethodV(scores):
+
+    die = [0,0,0,0]
+
+    die[0] = random.randint(1,6)
+    die[1] = random.randint(1,6)
+    die[2] = random.randint(1,6)
+    die[3] = random.randint(1,6)
+    die.sort
+    scores[0] = die[1] + die[2] + die[3]
+
+    die[0] = random.randint(1,6)
+    die[1] = random.randint(1,6)
+    die[2] = random.randint(1,6)
+    die[3] = random.randint(1,6)
+    die.sort
+    scores[1] = die[1] + die[2] + die[3]
+
+    die[0] = random.randint(1,6)
+    die[1] = random.randint(1,6)
+    die[2] = random.randint(1,6)
+    die[3] = random.randint(1,6)
+    die.sort
+    scores[2] = die[1] + die[2] + die[3]
+
+    die[0] = random.randint(1,6)
+    die[1] = random.randint(1,6)
+    die[2] = random.randint(1,6)
+    die[3] = random.randint(1,6)
+    die.sort
+    scores[3] = die[1] + die[2] + die[3]
+
+    die[0] = random.randint(1,6)
+    die[1] = random.randint(1,6)
+    die[2] = random.randint(1,6)
+    die[3] = random.randint(1,6)
+    die.sort
+    scores[4] = die[1] + die[2] + die[3]
+
+    die[0] = random.randint(1,6)
+    die[1] = random.randint(1,6)
+    die[2] = random.randint(1,6)
+    die[3] = random.randint(1,6)
+    die.sort
+    scores[5] = die[1] + die[2] + die[3]
+
+    #print(scores)
+    return scores
+
+
+#--------------------------------------
+# Assign Ability Scores priority 
+#  for Cleric
+#--------------------------------------
+def sortScoreForCleric(scores):
+
+    tScores = scores
+    tScores.sort
+    scores[0] = tScores[3]  # STR
+    scores[1] = tScores[0]  # DEX
+    scores[2] = tScores[4]  # CON
+    scores[3] = tScores[2]  # INT
+    scores[4] = tScores[5]  # WIS  
+    scores[5] = tScores[1]  # CHA
+
+    #print(scores)
+    return scores
+
+
+#--------------------------------------
+# Assign Ability Scores priority 
+#  for Druid
+#--------------------------------------
+def sortScoreForDruid(scores):
+
+    tScores = scores
+    tScores.sort
+    scores[0] = tScores[0]  # STR
+    scores[1] = tScores[3]  # DEX
+    scores[2] = tScores[2]  # CON
+    scores[3] = tScores[1]  # INT
+    scores[4] = tScores[4]  # WIS  
+    scores[5] = tScores[5]  # CHA
+
+    #print(scores)
+    return scores
+
+#--------------------------------------
+# Assign Ability Scores priority 
+#  for Fighter
+#--------------------------------------
+def sortScoreForFighter(scores):
+
+    tScores = scores
+    tScores.sort
+    scores[0] = tScores[5]  # STR
+    scores[1] = tScores[3]  # DEX
+    scores[2] = tScores[4]  # CON
+    scores[3] = tScores[2]  # INT
+    scores[4] = tScores[1]  # WIS  
+    scores[5] = tScores[0]  # CHA
+
+    print(scores)
+    return scores
+
+
+#--------------------------------------
+# Assign Ability Scores priority 
+#  for Thief
+#--------------------------------------
+def sortScoreForThief(scores):
+
+    tScores = scores
+    tScores.sort
+    scores[0] = tScores[1]  # STR
+    scores[1] = tScores[5]  # DEX
+    scores[2] = tScores[3]  # CON
+    scores[3] = tScores[4]  # INT
+    scores[4] = tScores[0]  # WIS  
+    scores[5] = tScores[2]  # CHA
+
+    #print(scores)
+    return scores
+
+
+#--------------------------------------
+# Assign Ability Scores priority 
+#  for Ranger
+#--------------------------------------
+def sortScoreForRanger(scores):
+
+    tScores = scores
+    tScores.sort
+    scores[0] = tScores[3]  # STR
+    scores[1] = tScores[1]  # DEX
+    scores[2] = tScores[5]  # CON
+    scores[3] = tScores[2]  # INT
+    scores[4] = tScores[4]  # WIS
+    scores[5] = tScores[0]  # CHA
+
+    #print(scores)
+    return scores
+
+#--------------------------------------
+# Assign Ability Scores priority 
+#  for Paladin
+#--------------------------------------
+def sortScoreForPaladin(scores):
+
+    tScores = scores
+    tScores.sort
+    scores[0] = tScores[3]  # STR
+    scores[1] = tScores[1]  # DEX
+    scores[2] = tScores[2]  # CON
+    scores[3] = tScores[0]  # INT
+    scores[4] = tScores[4]  # WIS  
+    scores[5] = tScores[5]  # CHA
+
+    #print(scores)
+    return scores
+
+
+#--------------------------------------
+# Assign Ability Scores priority 
+#  for Wizard
+#--------------------------------------
+def sortScoreForWizard(scores):
+
+    tScores = scores
+    tScores.sort
+    scores[0] = tScores[2]  # STR
+    scores[1] = tScores[4]  # DEX
+    scores[2] = tScores[3]  # CON
+    scores[3] = tScores[5]  # INT
+    scores[4] = tScores[1]  # WIS  
+    scores[5] = tScores[0]  # CHA
+
+    #print(scores)
+    return scores
+
+
+#--------------------------------------
+# Assign Ability Scores priority 
+#  for Illusionist
+#--------------------------------------
+def sortScoreForIllusionist(scores):
+
+    tScores = scores
+    tScores.sort
+    scores[0] = tScores[2]  # STR
+    scores[1] = tScores[5]  # DEX
+    scores[2] = tScores[3]  # CON
+    scores[3] = tScores[4]  # INT
+    scores[4] = tScores[1]  # WIS  
+    scores[5] = tScores[0]  # CHA
+
+    #print(scores)
+    return scores
+
+
+#--------------------------------------
+# Assign Ability Scores priority 
+#  for Bard
+#--------------------------------------
+def sortScoreForBard(scores):
+
+    tScores = scores
+    tScores.sort
+    scores[0] = tScores[1]  # STR
+    scores[1] = tScores[3]  # DEX
+    scores[2] = tScores[2]  # CON
+    scores[3] = tScores[4]  # INT
+    scores[4] = tScores[0]  # WIS  
+    scores[5] = tScores[5]  # CHA
+
+    #print(scores)
+    return scores
+
+
+#--------------------------------------
+# Assign Ability Scores priority 
+#  for Chronomancer
+#--------------------------------------
+def sortScoreForChronomancer(scores):
+
+    tScores = scores
+    tScores.sort
+    scores[0] = tScores[1]  # STR
+    scores[1] = tScores[3]  # DEX
+    scores[2] = tScores[2]  # CON
+    scores[3] = tScores[5]  # INT
+    scores[4] = tScores[4]  # WIS  
+    scores[5] = tScores[0]  # CHA
+
+    #print(scores)
+    return scores
+
+#--------------------------------------
+# Sort Ability Scores by Class
+#
+#--------------------------------------
+def sortScoreByClass(cRequest,scores):
+        if cRequest == 'Fighter':
+            tscores = sortScoreForFighter(scores)
+        elif cRequest == 'Ranger':
+            tscores = sortScoreForRanger(scores)
+        elif cRequest == 'Wizard':
+            tscores = sortScoreForWizard(scores)
+        elif cRequest == 'Cleric':
+            tscores = sortScoreForCleric(scores)
+        elif cRequest == 'Druid':
+            tscores = sortScoreForDruid(scores)
+        elif cRequest == 'Thief':
+            tscores = sortScoreForThief(scores)
+        elif cRequest == 'Bard':
+            tscores=sortScoreForBard(scores)
+        elif cRequest == 'Paladin':
+            tscores = sortScoreForPaladin(scores)
+        elif cRequest == 'Fighter/Thief':
+            tscores = sortScoreForFighter(scores)
+        elif cRequest == 'Fighter/Cleric':
+            tscores = sortScoreForCleric(scores)
+        elif cRequest == 'Fighter/Mage':
+            tscores = sortScoreForMage(scores)
+        elif cRequest == 'Mage/Thief':
+            tscores = sortScoreForMage(scores)
+        elif cRequest == 'Fighter/Illusionist':
+            tscores = sortScoreForIllusionist(scores)
+        elif cRequest == 'Cleric/Illusionist':
+            tscores = sortScoreForCleric(scores)
+        elif cRequest == 'Cleric/Thief':
+            tscores = sortScoreForCleric(scores)
+        elif cRequest == 'Illusionist/Thief':
+            tscores = sortScoreForIllusionist(scores)
+        elif cRequest == 'Fighter/Druid':
+            tscores = sortScoreForDruid(scores)
+        elif cRequest == 'Cleric/Ranger':
+            tscores = sortScoreForRanger(scores)
+        elif cRequest == 'Cleric/Mage':
+            tscores = sortScoreForCleric(scores)
+        elif cRequest == 'Druid/Mage':
+            tscores = sortScoreForDruid(scores)
+        elif cRequest == 'Fighter/Mage/Cleric':
+            tscores = sortScoreForCleric(scores)
+        elif cRequest == 'Thief':
+            tscores = sortScoreForThief(scores)
+        elif cRequest == 'Fighter/Mage/Druid':
+            tscores = sortScoreForDruid(scores)
+        elif cRequest == 'Fighter/Mage/Thief':
+            tscores = sortScoreForThief(scores)
+        elif cRequest == 'Priest':
+            tscores = sortScoreForCleric(scores)
+        elif cRequest == 'Mage':
+            tscores = sortScoreForWizard(scores)
+        elif cRequest == 'Illusionist':
+            tscores = sortScoreForIllusionist(scores)
+        elif cRequest == 'Chronomancer':
+            tscores = sortScoreForChronomancer(scores)
+        elif cRequest == 'Temporal-Champion':
+            tscores = sortScoreForChronomancer(scores)
+        elif cRequest == 'Temporal-Raider':
+            tscores = sortScoreForChronomancer(scores)
+        else:
+            tscores = scores
+
+        return tscores
 
 #--------------------------------------
 # If character is a Fighter, Paladin, 
@@ -217,6 +669,7 @@ def classSelector(scores, my_race):
         for i in sorted(toRemove, reverse = True):
             del charClass[i]
 
+# Remove classes based on lower than required STR
     if scores[0] < 9:
         if 'Fighter' in charClass:
             charClass.remove('Fighter')
@@ -236,6 +689,7 @@ def classSelector(scores, my_race):
             charClass.remove('Fighter/Mage/Druid')
         if 'Fighter/Mage/Thief' in charClass:
             charClass.remove('Fighter/Mage/Thief')
+    # Remove classes based on lower than required INT
     if scores[3] < 9:
         if 'Wizard' in charClass:
             charClass.remove('Wizard')
@@ -245,16 +699,16 @@ def classSelector(scores, my_race):
             charClass.remove('Mage/Thief')
         if 'Illusionist' in charClass:
             charClass.remove('Illusionist')
+    # Remove classes based on lower than required DEX
     if scores[1] < 9:
         if 'Thief' in charClass:
             charClass.remove('Thief')
+    # Remove classes based on lower than required WIS
     if scores[4] < 9:
         if 'Cleric' in charClass:
             charClass.remove('Cleric')
         if 'Priest' in charClass:
             charClass.remove('Priest')
-        if 'Cleric/Ranger' in charClass:
-            charClass.remove('Cleric/Ranger')
         if 'Cleric/Mage' in charClass:
             charClass.remove('Cleric/Mage')
         if 'Druid/Mage' in charClass:
@@ -263,23 +717,38 @@ def classSelector(scores, my_race):
             charClass.remove('Cleric/Thief')
         if 'Cleric/Illusionist' in charClass:
             charClass.remove('Cleric/Illusionist')
+    # Remove classes based on lower than required for a Bard
     if scores[1] < 12 or scores[3] < 13 or scores[5] < 15:
         if 'Bard' in charClass:
             charClass.remove('Bard')
+    # Remove classes based on lower than required for a Druid
     if scores[4] < 12 or scores[5] < 15:
         if 'Druid' in charClass:
             charClass.remove('Druid')
+    # Remove classes based on lower than required for a Ranger
     if scores[0] < 13 or scores[1] < 13 or scores[2] < 14 or scores[4] < 14:
         if 'Ranger' in charClass:
             charClass.remove('Ranger')
+    # Remove classes based on lower than required for a Cleric/Ranger
+    if scores[0] < 13 or scores[1] < 13 or scores[2] < 14 or scores[4] < 14:
+        if 'Cleric/Ranger' in charClass:
+            charClass.remove('Cleric/Ranger')
+    # Remove classes based on lower than required for a Paladin
     if scores[0] < 12 or scores[2] < 9 or scores[4] < 13 or scores[5] < 17:
         if 'Paladin' in charClass:
             charClass.remove('Paladin')
+    # Remove classes based on lower than required for a Chronomancer
+    if scores[3] < 17 or scores[4] < 16:
+        if 'Chronomancer' in charClass:
+            charClass.remove('Chronomancer')
+    if scores[3] < 17 or scores[4] < 16:
+        if 'Chronomancer' in charClass:
+            charClass.remove('Chronomancer')    
 
     # Select class based upon value of highest score if not human
     #   Otherwise, random choice
     score_max = max(range(len(scores)), key=scores.__getitem__)
-
+    
     if len(charClass) == 0:
         my_class = 'Villager' # No available classes         
     elif my_race != 'Human':
@@ -319,7 +788,7 @@ def classSelector(scores, my_race):
 def certainClass(my_class, my_race, scores, cRequest, rand_bool):
     if rand_bool == 0:  # Certain race/class combo requested
         if my_race == 'Dwarf':
-            toRemove = [1,2,4,6,7,10,11,12,13,14,15,16,17,18,19,20,21,22,24,25]
+            toRemove = [1,2,4,6,7,10,11,12,13,14,15,16,17,18,19,20,21,22,24,25,26,27,28]
             for i in sorted(toRemove, reverse = True):
                 del charClass[i]
         elif my_race == 'Elf':
@@ -327,15 +796,15 @@ def certainClass(my_class, my_race, scores, cRequest, rand_bool):
             for i in sorted(toRemove, reverse = True):
                 del charClass[i]
         elif my_race == 'Gnome':
-            toRemove = [1,2,4,6,7,10,11,16,17,18,19,20,21,22,24]
+            toRemove = [1,2,4,6,7,10,11,16,17,18,19,20,21,22,24,26,27,28]
             for i in sorted(toRemove, reverse = True):
                 del charClass[i]
         elif my_race == 'Halfling':
-            toRemove = [1,2,4,6,7,9,10,11,12,13,14,15,16,17,18,19,20,21,22,24,25]
+            toRemove = [1,2,4,6,7,9,10,11,12,13,14,15,16,17,18,19,20,21,22,24,25,26,27,28]
             for i in sorted(toRemove, reverse = True):
                 del charClass[i]
         elif my_race == 'Half-Orc':
-            toRemove = [1,4,6,7,11,12,13,14,15,16,17,18,19,20,21,22]
+            toRemove = [1,4,6,7,11,12,13,14,15,16,17,18,19,20,21,22,26,27,28]
             for i in sorted(toRemove, reverse = True):
                 del charClass[i]
         elif my_race == 'Half-Elf':
@@ -343,7 +812,7 @@ def certainClass(my_class, my_race, scores, cRequest, rand_bool):
             for i in sorted(toRemove, reverse = True):
                 del charClass[i]
         else:
-            toRemove = [8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]
+            toRemove = [8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,27,28]
             for i in sorted(toRemove, reverse = True):
                 del charClass[i]
         if cRequest not in charClass:
@@ -352,10 +821,11 @@ def certainClass(my_class, my_race, scores, cRequest, rand_bool):
     while my_class != cRequest:
         resetRC()
         scores = roll(scores)
+        scores = sortScoreByClass(cRequest,scores)
         my_race = racial(scores)
         scores = raceAdjust(scores, my_race)
         my_class = classSelector(scores, my_race)
-   
+    
     return my_class, my_race, scores
 
 #--------------------------------------
@@ -379,7 +849,8 @@ def resetRC():
     charClass = ['Fighter','Ranger','Wizard','Cleric','Druid','Thief','Bard','Paladin','Fighter/Thief',\
     'Fighter/Cleric','Fighter/Mage','Mage/Thief','Fighter/Illusionist','Cleric/Illusionist','Cleric/Thief',\
     'Illusionist/Thief','Fighter/Druid','Cleric/Ranger','Cleric/Mage','Druid/Mage','Fighter/Mage/Cleric',\
-    'Fighter/Mage/Druid','Fighter/Mage/Thief','Priest','Mage','Illusionist']
+    'Fighter/Mage/Druid','Fighter/Mage/Thief','Priest','Mage','Illusionist',\
+    'Chronomancer','Chronomancer/Warrior','Temporal-Raider']
 
 #--------------------------------------
 # Determine character height
@@ -404,22 +875,22 @@ def getHeight(my_race, my_gender):
         if my_gender == 'Male':
             base = 60
         else: base = 58
-        modifier = random.randint(2,12)
+        modifier = random.randint(1,6) + random.randint(1,6)
     elif my_race == 'Halfling':
         if my_gender == 'Male':
             base = 32
         else: base = 30
-        modifier = random.randint(2,16)
+        modifier = random.randint(1,8) + random.randint(1,8)
     elif my_race == 'Half-Orc':
         if my_gender == 'Male':
             base = 65
         else: base = 64
-        modifier = random.randint(2,16)
+        modifier = random.randint(1,8) + random.randint(1,8)
     else:   # my_race == 'Human':
         if my_gender == 'Male':
             base = 60
         else: base = 59
-        modifier = random.randint(2,20)
+        modifier = random.randint(1,10) + random.randint(1,10)
     height = base + modifier
 
     return height
@@ -432,37 +903,37 @@ def getWeight(my_race, my_gender):
         if my_gender == 'Male':
             base = 130
         else: base = 105
-        modifier = random.randint(4,40)
+        modifier = random.randint(1,10) + random.randint(1,10) + random.randint(1,10) + random.randint(1,10) 
     elif my_race == 'Elf':
         if my_gender == 'Male':
             base = 90
         else: base = 70
-        modifier = random.randint(3,30)
+        modifier = random.randint(1,10) + random.randint(1,10) + random.randint(1,10)
     elif my_race == 'Gnome':
         if my_gender == 'Male':
             base = 72
         else: base = 68
-        modifier = random.randint(5,20)
+        modifier = random.randint(1,4) + random.randint(1,4) + random.randint(1,4) + random.randint(1,4) + random.randint(1,4)
     elif my_race == 'Half-Elf':
         if my_gender == 'Male':
             base = 110
         else: base = 85
-        modifier = random.randint(3,36)
+        modifier = random.randint(1,12) + random.randint(1,12) + random.randint(1,12)
     elif my_race == 'Halfling':
         if my_gender == 'Male':
             base = 52
         else: base = 48
-        modifier = random.randint(5,20)
+        modifier = random.randint(1,4) + random.randint(1,4) + random.randint(1,4) + random.randint(1,4) + random.randint(1,4)
     elif my_race == 'Half-Orc':
         if my_gender == 'Male':
             base = 160
         else: base = 120
-        modifier = random.randint(6,72)
+        modifier = random.randint(1,10) + random.randint(1,10) + random.randint(1,10) + random.randint(1,10) + random.randint(1,10) + random.randint(1,10)
     else:   # my_race == 'Human':
         if my_gender == 'Male':
             base = 140
         else: base = 100
-        modifier = random.randint(6,60)
+        modifier = random.randint(1,10) + random.randint(1,10) + random.randint(1,10) + random.randint(1,10) + random.randint(1,10) + random.randint(1,10)
     weight = base + modifier
 
     return weight
@@ -473,22 +944,22 @@ def getWeight(my_race, my_gender):
 def getAge(my_race, my_level):
     if my_race == 'Dwarf':
         base = 40 + my_level
-        modifier = random.randint(5,30)
+        modifier = random.randint(1,6) + random.randint(1,6) + random.randint(1,6) + random.randint(1,6) + random.randint(1,6)
     elif my_race == 'Elf':
         base = 100 + my_level
-        modifier = random.randint(5,30)
+        modifier = random.randint(1,6) + random.randint(1,6) + random.randint(1,6) + random.randint(1,6) + random.randint(1,6)
     elif my_race == 'Gnome':
         base = 60 + my_level
-        modifier = random.randint(3,36)
+        modifier = random.randint(1,12) + random.randint(1,12) + random.randint(1,12) 
     elif my_race == 'Half-Elf':
         base = 15 + my_level
         modifier = random.randint(1,6)
     elif my_race == 'Halfling':
         base = 20 + my_level
-        modifier = random.randint(3,12)
+        modifier = random.randint(1,4) + random.randint(1,4) + random.randint(1,4)
     elif my_race == 'Half-Orc':
         base = 30 + my_level
-        modifier = random.randint(2,12)
+        modifier = random.randint(1,6) + random.randint(1,6) + random.randint(1,6)
     else:   # my_race == 'Human':
         base = 15 + my_level
         modifier = random.randint(1,4)
@@ -530,10 +1001,12 @@ def genAL(my_class, my_race):
         AL = ['CG', 'CN', 'CE']
     elif my_class == 'Paladin':
         AL = ['LG']
-    elif my_class == 'Ranger':
+    elif 'Ranger' in my_class:
         AL = ['LG', 'LN', 'NG', 'TN', 'CG']
     elif my_class == 'Bard':
         AL = ['LN', 'TN', 'CN']
+    elif my_class == 'Chronomancer' or 'Temporal' in my_class:
+        AL = ['LG', 'LN', 'LE', 'NG', 'TN', 'NE']
     else:
         AL = ['LG', 'LN', 'LE', 'NG', 'TN', 'NE', 'CG', 'CN', 'CE']
     
@@ -549,7 +1022,8 @@ def rollHP(my_class, my_level):
     if my_class == 'Fighter' or my_class == 'Paladin' or my_class == 'Ranger'\
         or my_class == 'Fighter/Thief' or my_class == 'Fighter/Cleric' or my_class == 'Fighter/Mage'\
         or my_class == 'Fighter/Illusionist' or my_class == 'Cleric/Ranger' or my_class == 'Druid/Ranger'\
-        or my_class == 'Fighter/Mage/Cleric' or my_class == 'Fighter/Mage/Druid' or my_class == 'Fighter/Mage/Thief':
+        or my_class == 'Fighter/Mage/Cleric' or my_class == 'Fighter/Mage/Druid' or my_class == 'Fighter/Mage/Thief'\
+        or my_class == 'Temporal-Champion':
         for x in range(my_level):
             die = random.randint(1,10)
             my_hp = my_hp + die
@@ -558,7 +1032,8 @@ def rollHP(my_class, my_level):
         for x in range(my_level):
             die = random.randint(1,8)
             my_hp = my_hp + die
-    elif my_class == 'Thief' or my_class == 'Bard' or my_class == 'Mage/Thief' or my_class == 'Illusionist/Thief':
+    elif my_class == 'Thief' or my_class == 'Bard' or my_class == 'Mage/Thief' or my_class == 'Illusionist/Thief'\
+        or my_class == 'Temporal-Raider':
         for x in range(my_level):
             die = random.randint(1,6)
             my_hp = my_hp + die
@@ -582,12 +1057,14 @@ def getTHAC0(my_class, my_level):
     if my_class == 'Fighter' or my_class == 'Paladin' or my_class == 'Ranger'\
         or my_class == 'Fighter/Thief' or my_class == 'Fighter/Cleric' or my_class == 'Fighter/Mage'\
         or my_class == 'Fighter/Illusionist' or my_class == 'Cleric/Ranger' or my_class == 'Druid/Ranger'\
-        or my_class == 'Fighter/Mage/Cleric' or my_class == 'Fighter/Mage/Druid' or my_class == 'Fighter/Mage/Thief':
+        or my_class == 'Fighter/Mage/Cleric' or my_class == 'Fighter/Mage/Druid' or my_class == 'Fighter/Mage/Thief'\
+        or my_class == 'Temporal-Champion':
         thac0 = thac0_table[2][my_level]
     elif my_class == 'Cleric' or my_class == 'Druid' or my_class == 'Cleric/Illusionist' or my_class == 'Cleric/Mage'\
         or my_class == 'Cleric/Druid' or my_class == 'Cleric/Thief':
         thac0 = thac0_table[0][my_level]
-    elif my_class == 'Thief' or my_class == 'Bard' or my_class == 'Mage/Thief' or my_class == 'Illusionist/Thief':
+    elif my_class == 'Thief' or my_class == 'Bard' or my_class == 'Mage/Thief' or my_class == 'Illusionist/Thief'\
+        or my_class == 'Temporal-Raider':
         thac0 = thac0_table[1][my_level]
     else:
         thac0 = thac0_table[3][my_level]
@@ -624,7 +1101,8 @@ def getST(my_class, my_level, my_race, con):
     if my_class == 'Fighter' or my_class == 'Paladin' or my_class == 'Ranger'\
         or my_class == 'Fighter/Thief' or my_class == 'Fighter/Cleric' or my_class == 'Fighter/Mage'\
         or my_class == 'Fighter/Illusionist' or my_class == 'Cleric/Ranger' or my_class == 'Druid/Ranger'\
-        or my_class == 'Fighter/Mage/Cleric' or my_class == 'Fighter/Mage/Druid' or my_class == 'Fighter/Mage/Thief':
+        or my_class == 'Fighter/Mage/Cleric' or my_class == 'Fighter/Mage/Druid' or my_class == 'Fighter/Mage/Thief'\
+        or my_class == 'Temporal-Champion':
         st[0] = st_ppdm_table[2][my_level]
         st[1] = st_rsw_table[2][my_level]
         st[2] = st_pp_table[2][my_level]
@@ -637,7 +1115,8 @@ def getST(my_class, my_level, my_race, con):
         st[2] = st_pp_table[0][my_level]
         st[3] = st_bw_table[0][my_level]
         st[4] = st_spell_table[0][my_level]
-    elif my_class == 'Thief' or my_class == 'Bard' or my_class == 'Mage/Thief' or my_class == 'Illusionist/Thief':
+    elif my_class == 'Thief' or my_class == 'Bard' or my_class == 'Mage/Thief' or my_class == 'Illusionist/Thief'\
+        or my_class == 'Temporal-Raider':
         st[0] = st_ppdm_table[1][my_level]
         st[1] = st_rsw_table[1][my_level]
         st[2] = st_pp_table[1][my_level]
@@ -885,7 +1364,8 @@ def selectWP(my_class, wprofs):
     if my_class == 'Fighter':   # Fighter weapon specialization
         my_wprofs = F_selectWP(all_weapons, wprofs)
     elif my_class == 'Paladin' or my_class == 'Ranger' or my_class == 'Bard' or my_class == 'Fighter/Thief'\
-        or my_class == 'Fighter/Mage' or my_class == 'Fighter/Illusionist' or my_class == 'Fighter/Mage/Thief':
+        or my_class == 'Fighter/Mage' or my_class == 'Fighter/Illusionist' or my_class == 'Fighter/Mage/Thief'\
+        or my_class == 'Temporal-Champion':
         # Pick from all weapons list
         #  until all currently available WP slots are full
         while wprofs > 0:
@@ -927,7 +1407,7 @@ def selectWP(my_class, wprofs):
                 prof_pick = random.randint(0,8)
             my_wprofs.append(druid_weapons[prof_pick])
             wprofs -= 1
-    elif my_class == 'Thief' or my_class == 'Mage/Thief' or my_class == 'Illusionist/Thief':
+    elif my_class == 'Thief' or my_class == 'Mage/Thief' or my_class == 'Illusionist/Thief' or my_class == 'Temporal-Raider':
         # Pick from Thief weapons list
         #  until all currently available WP slots are full
         while wprofs > 0:
@@ -1088,6 +1568,7 @@ def printScores(scores, xSTR, my_class):
     print('CHA | '+str(scores[5])+ ' | Max # Hench: ' + str(cha_att[0])\
             +' | Loyalty Base: ' + str(cha_att[1]) + ' | React Adj: ' + str(cha_att[2]))
 
+
 #--------------------------------------
 # Gather and return class-specific 
 #   character data
@@ -1106,7 +1587,12 @@ def classData(my_class, my_level, my_race, scores, my_armor):
     elif my_class == 'Illusionist':
         my_xp = getWizard_XP(my_level)
         spellsByLevel = Wizard_Spells(my_level)
-        school = ['Illusionist','Illusion','Necromancy, Invocation/Evocation, and Abjuration']
+        school = ['Illusionist','Illusion','Necromancy','Invocation/Evocation', 'Abjuration']
+        return my_xp, spellsByLevel, school
+    elif my_class == 'Chromomancer':
+        my_xp = getWizard_XP(my_level)
+        spellsByLevel = Wizard_Spells(my_level)
+        school = ['Chromomancer', 'Chronomancy','Abjuration','Conjuration/Summoning','Necromancy']
         return my_xp, spellsByLevel, school
     elif my_class == 'Cleric':
         my_xp = getPriest_XP(my_class, my_level)
@@ -1153,6 +1639,8 @@ def classData(my_class, my_level, my_race, scores, my_armor):
         my_thief_skills = bard_skills(my_race, my_level, my_armor, scores[1])
         spellsByLevel = Bard_Spells(my_level)
         return my_xp, my_thief_skills, spellsByLevel
+
+
 
 #--------------------------------------
 # Print class-specific 
@@ -1346,7 +1834,7 @@ def printSheet(my_race, my_class, my_level):
     my_nwprofs = selectNWP(my_class, my_nonw_prof)
 
     # Print character sheets to a directory
-    my_dir = '2E_Character_Sheets'
+    my_dir = 'Level_' + str(my_level) + '_2E_Character_Sheets'
     parent_dir = os.getcwd()
     path = os.path.join(parent_dir, my_dir)
     try:
@@ -1354,7 +1842,9 @@ def printSheet(my_race, my_class, my_level):
     except OSError as error:
         print("Directory '%s' can not be created.\n" % my_dir)
 
-    name2 = os.path.join(path, my_name)
+    outscore = 's' + str(scores[0]) + 'd' + str(scores[1]) + 'c' + str(scores[2]) + 'i' + str(scores[3]) + 'w' + str(scores[4]) + 'c' + str(scores[5])  
+    outfile = my_name + '_L' + str(my_level) + '_' + my_race.upper() + '_' + my_class.replace('/','-') + '_' + outscore + '_' + str(sum(scores))
+    name2 = os.path.join(path, outfile)
     canvas = canvas.Canvas(name2 + ".pdf", pagesize=A4)
     canvas.setLineWidth(.3)
     canvas.setFont('Helvetica', 12)
@@ -1855,41 +2345,74 @@ def printSheet(my_race, my_class, my_level):
         canvas.setFont('Helvetica', 12)
         canvas.drawString(30,750,'Multi-class Characteristics')
         canvas.line(30,740,580,740)
+        yPos = 720
 
         if 'Fighter' in my_class:
-            canvas.drawString(30,720,'Fighter Class')
             my_xp, S_Att_R, Att_R, followers = classData('Fighter', my_level, my_race, scores, my_armor)
-            canvas.drawString(30,690,'Experience Points: ' + str(my_xp))
-            canvas.drawString(30,660,'Specialist Attacks/Round:')
+            canvas.drawString(30,yPos,'Fighter Class')
+            canvas.drawString(30,yPos-30,'Experience Points: ' + str(my_xp))
+            canvas.drawString(30,yPos-60,'Specialist Attacks/Round:')
             canvas.setFont('Helvetica', 8)
-            canvas.drawString(180,660,'Melee')
-            canvas.drawString(215,660,'Light X-bow')
-            canvas.drawString(285,660,'Heavy X-bow')
-            canvas.drawString(355,660,'Thrown Dagger')
-            canvas.drawString(425,660,'Thrown Dart')
-            canvas.drawString(495,660,'Other Missiles(not bow)')
-            canvas.drawString(180,645,str(S_Att_R[0]))
-            canvas.drawString(215,645,str(S_Att_R[1]))
-            canvas.drawString(285,645,str(S_Att_R[2]))
-            canvas.drawString(355,645,str(S_Att_R[3]))
-            canvas.drawString(425,645,str(S_Att_R[4]))
-            canvas.drawString(495,645,str(S_Att_R[5]))
+            canvas.drawString(180,yPos-60,'Melee')
+            canvas.drawString(215,yPos-60,'Light X-bow')
+            canvas.drawString(285,yPos-60,'Heavy X-bow')
+            canvas.drawString(355,yPos-60,'Thrown Dagger')
+            canvas.drawString(425,yPos-60,'Thrown Dart')
+            canvas.drawString(495,yPos-60,'Other Missiles(not bow)')
+            canvas.drawString(180,yPos-75,str(S_Att_R[0]))
+            canvas.drawString(215,yPos-75,str(S_Att_R[1]))
+            canvas.drawString(285,yPos-75,str(S_Att_R[2]))
+            canvas.drawString(355,yPos-75,str(S_Att_R[3]))
+            canvas.drawString(425,yPos-75,str(S_Att_R[4]))
+            canvas.drawString(495,yPos-75,str(S_Att_R[5]))
             canvas.setFont('Helvetica', 12)
-            canvas.drawString(30,625,'Non-Specialist Attacks/Round: ' + str(Att_R))
-            canvas.drawString(30,595,'Followers:')
+            canvas.drawString(30,yPos-100,'Non-Specialist Attacks/Round: ' + str(Att_R))
+            canvas.drawString(30,yPos-130,'Followers:')
             canvas.setFont('Helvetica', 8)
-            canvas.drawString(40,580,'Leader:')
-            canvas.drawString(130,580,str(followers[0]))
-            canvas.drawString(40,560,'Troops (0th-level):')
-            canvas.drawString(130,560,str(followers[1]))
-            canvas.drawString(40,540,'Elite Units:')
-            canvas.drawString(130,540,str(followers[2]))
+            canvas.drawString(40,yPos-145,'Leader:')
+            canvas.drawString(130,yPos-145,str(followers[0]))
+            canvas.drawString(40,yPos-165,'Troops (0th-level):')
+            canvas.drawString(130,yPos-170,str(followers[1]))
+            canvas.drawString(40,yPos-190,'Elite Units:')
+            canvas.drawString(130,yPos-190,str(followers[2]))
             canvas.setFont('Helvetica', 12)
-            canvas.line(30,530,580,530)
-        
+            canvas.line(30,yPos-200,580,yPos-200)
+            yPos = yPos - 230
+
+        if 'Ranger' in my_class:
+            my_xp, Att_R, thief_skills, casting_lvl, priest_spells, my_Gspheres, my_Mspheres, followers = classData('Ranger', my_level, my_race, scores, my_armor)
+            canvas.drawString(30,yPos,'Ranger Class')
+            canvas.drawString(30,yPos-30,'Experience Points: ' + str(my_xp))
+            canvas.drawString(30,yPos-60,'Attacks/Round: ' + str(Att_R))
+            canvas.drawString(30,yPos-90,'Priest Spells:')
+            canvas.setFont('Helvetica', 8)
+            canvas.drawString(120,yPos-90,'Casting Level')
+            canvas.drawString(180,yPos-90,'1st')
+            canvas.drawString(200,yPos-90,'2nd')
+            canvas.drawString(220,yPos-90,'3rd')
+            canvas.drawString(120,yPos-105,str(casting_lvl))
+            canvas.drawString(180,yPos-105,str(priest_spells[0]))
+            canvas.drawString(200,yPos-105,str(priest_spells[1]))
+            canvas.drawString(220,yPos-105,str(priest_spells[2]))
+            canvas.setFont('Helvetica', 12)
+            canvas.drawString(30,yPos-135,'Priest Spheres:')
+            canvas.setFont('Helvetica', 8)
+            canvas.drawString(120,yPos-135,'Plant, Animal')
+            canvas.setFont('Helvetica', 12)
+            canvas.drawString(30,yPos-165,'Rogue Skills:')
+            canvas.setFont('Helvetica', 8)
+            canvas.drawString(120,yPos-165,'Hide in Shadows:')
+            canvas.drawString(190,yPos-165,str(thief_skills[0]))
+            canvas.drawString(120,yPos-180,'Move Silently:')
+            canvas.drawString(190,yPos-180,str(thief_skills[1]))
+            canvas.setFont('Helvetica', 12)
+            canvas.drawString(30,yPos-210,'Followers: ' + str(followers[0]))
+            canvas.setFont('Helvetica', 12)
+            canvas.line(30,yPos-220,580,yPos-220)
+
         if 'Mage' in my_class:
-            my_xp, wspellsByLevel, school = classData('Wizard', my_level, my_race, scores, my_armor)
-            canvas.drawString(30,500,'Wizard Class')
+            my_xp, wspellsByLevel, school = classData('Mage', my_level, my_race, scores, my_armor)
+            canvas.drawString(30,500,'Mage Class')
             canvas.drawString(30,470,'Experience Points: ' + str(my_xp))
             canvas.drawString(30,440,'Wizard Spells:')
             canvas.setFont('Helvetica', 8)
@@ -1915,8 +2438,8 @@ def printSheet(my_race, my_class, my_level):
             canvas.line(30,370,580,370)
         
         if 'Illusionist' in my_class:
-            my_xp, wspellsByLevel, school = classData('Wizard', my_level, my_race, scores, my_armor)
-            canvas.drawString(30,500,'Wizard Class')
+            my_xp, wspellsByLevel, school = classData('Illusionist', my_level, my_race, scores, my_armor)
+            canvas.drawString(30,500,'Illusionist Class')
             canvas.drawString(30,470,'Experience Points: ' + str(my_xp))
             canvas.drawString(30,440,'Wizard Spells:')
             canvas.setFont('Helvetica', 8)
@@ -1998,8 +2521,8 @@ def printSheet(my_race, my_class, my_level):
             canvas.line(30,170,580,170)
 
         if 'Druid' in my_class:
-            my_xp, pspellsByLevel, my_Gspheres, my_Mspheres = classData('Cleric', my_level, my_race, scores, my_armor)
-            canvas.drawString(30,340,'Cleric Class')
+            my_xp, pspellsByLevel, my_Gspheres, my_Mspheres = classData('Druid', my_level, my_race, scores, my_armor)
+            canvas.drawString(30,340,'Druid Class')
             canvas.drawString(30,310,'Experience Points: ' + str(my_xp))
             canvas.drawString(30,280,'Priest Spells:')
             canvas.setFont('Helvetica', 8)
@@ -2079,17 +2602,17 @@ def printSheet(my_race, my_class, my_level):
 
     if 'Mage' in my_class or 'Illusionist' in my_class or my_class == 'Wizard' or my_class == 'Bard':
         my_spells = getWizardSpells(my_class, school, wspellsByLevel)
-        csvWizardSpells(my_spells,my_name)
+        csvWizardSpells(my_spells,my_name,my_level)
     
     if 'Cleric' in my_class or 'Druid' in my_class or my_class == 'Priest':
         my_spells = getPriestSpells(pspellsByLevel, my_Gspheres, my_Mspheres, my_class)
-        csvPriestSpells(my_spells,my_name)
+        csvPriestSpells(my_spells,my_name,my_level)
     elif my_class == 'Ranger':
         my_spells = getPriestSpells(priest_spells, my_Gspheres, my_Mspheres, my_class)
-        csvPriestSpells(my_spells,my_name)
+        csvPriestSpells(my_spells,my_name,my_level)
     elif my_class == 'Paladin':
         my_spells = getPriestSpells(spellsByLevel, my_Gspheres, my_Mspheres, my_class)
-        csvPriestSpells(my_spells,my_name)
+        csvPriestSpells(my_spells,my_name,my_level)
 
     canvas.save()
 
@@ -2151,6 +2674,7 @@ def main(argv):
         # Roll for ability scores
         global scores
         scores = roll(scores)
+        sortScoreByClass(cRequest,scores)
 
         # Set character level to request if valid (1-20)
         #  otherwise accept default

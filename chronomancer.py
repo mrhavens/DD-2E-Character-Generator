@@ -1,11 +1,11 @@
-#############################################
-# AD&D 2nd Edition                          #
-# Random Character Generator:               #
+#######################################
+# AD&D 2nd Edition                    #
+# Random Character Generator:         #
 #  Wizard                             #
-#                                           #
+#                                     #
 # Adds Wizard abilities to randomly   #
-#  generated character                      #
-#############################################
+#  generated character                #
+#######################################
 
 import random, csv, os
 
@@ -14,33 +14,175 @@ import random, csv, os
 #  points a character has based on
 #  level
 #--------------------------------------
-def getWizard_XP(my_level):
-    wizard_table = [0,2500,5000,10000,20000,40000,60000,90000,135000,250000,375000,\
-        750000,1125000,1500000,1875000,2250000,2625000,3000000,3375000,3750000]
+def getChronomancer_XP(my_level):
+    wizard_table = [0,3000,6000,12000,24000,48000,72000,105000,160000,285000,425000,\
+        850000,1235000,1610000,1985000,2370000,2755000,3140000,3525000,3910000]
 
-    my_xp = wizard_table[my_level - 1]
+    my_xp = chronomancer_table[my_level - 1]
+
+    return my_xp
+
+def getTemporalRaider_XP(my_level):
+    temporalraider_table = [0,3500,7000,14000,28000,55000,110000,220000,400000,840000,1280000,\
+        1720000,2160000,2600000,3040000,3480000,3920000,4360000,4800000,5240000]
+
+    my_xp = temporalraider_table[my_level - 1]
+
+    return my_xp
+
+def getTemporalChampion_XP(my_level):
+    temporalchampion_table = [0,4000,8000,16000,30000,60000,120000,200000,350000,700000,1000000,\
+        1500000,2000000,25000000,3000000,4000000,45000000,5000000,5500000,6000000]
+
+    my_xp = temporalchampion_table[my_level - 1]
 
     return my_xp
 
 #--------------------------------------
 # Return the casting level and number
-#  of wizard spells a wizard has
+#  of chronomancer spells a chronomancer has
 #  based on level
 #--------------------------------------
-def Wizard_Spells(my_level):
-    wizard_spell_table = [[1,0,0,0,0,0,0,0,0],[2,0,0,0,0,0,0,0,0],[2,1,0,0,0,0,0,0,0],[3,2,0,0,0,0,0,0,0],\
-        [4,2,1,0,0,0,0,0,0],[4,2,2,0,0,0,0,0,0],[4,3,2,1,0,0,0,0,0],[4,3,3,2,0,0,0,0,0],[4,3,3,2,1,0,0,0,0],\
-        [4,4,3,2,2,0,0,0,0],[4,4,4,3,3,0,0,0,0],[4,4,4,4,4,1,0,0,0],[5,5,5,4,4,2,0,0,0],[5,5,5,4,4,2,1,0,0],\
-        [5,5,5,5,5,2,1,0,0],[5,5,5,5,5,3,2,1,0],[5,5,5,5,5,3,3,2,0],[5,5,5,5,5,3,3,2,1],[5,5,5,5,5,3,3,3,1],\
-        [5,5,5,5,5,4,3,3,2]]
+def Chronomancer_Spells(my_level):
+    chronomancer_spell_table = [\
+        # Level 1
+        [1,0,0,0,0,0,0,0,0],\
+        # Level 2
+        [1,0,0,0,0,0,0,0,0],\ 
+        # Level 3
+        [1,1,0,0,0,0,0,0,0],\
+        # Level 4
+        [2,1,0,0,0,0,0,0,0],\
+        # Level 5
+        [3,1,1,0,0,0,0,0,0],\
+        # Level 6
+        [3,1,1,0,0,0,0,0,0],\
+        # Level 7
+        [3,2,1,1,0,0,0,0,0],\
+        # Level 8
+        [3,2,2,1,0,0,0,0,0],\
+        # Level 9
+        [3,2,2,1,1,0,0,0,0],\
+        # Level 10
+        [3,3,2,1,1,0,0,0,0],\
+        # Level 11
+        [3,3,3,2,2,0,0,0,0],\
+        # Level 12
+        [3,3,3,3,3,1,0,0,0],\
+        # Level 13
+        [4,4,4,3,3,1,0,0,0],\
+        # Level 14
+        [4,4,4,3,3,1,1,0,0],\
+        # Level 15
+        [4,4,4,4,4,1,1,0,0],\
+        # Level 16
+        [4,4,4,4,4,2,1,1,0],\
+        # Level 17
+        [4,4,4,4,4,2,2,1,0],\
+        # Level 18
+        [4,4,4,4,4,2,2,1,1],\
+        # Level 19
+        [4,4,4,4,4,2,2,2,1],\
+        # Level 20
+        [4,4,4,4,4,3,2,2,1]]
     
-    return wizard_spell_table[my_level - 1]
+    return chronomancer_spell_table[my_level - 1]
+
+def TemporalRaider_Spells(my_level):
+    temporal-raider_spell_table = [\
+        # Level 1
+        [1,0,0,0,0,0,0,0,0],
+        # Level 2
+        [1,0,0,0,0,0,0,0,0],\ 
+        # Level 3
+        [1,1,0,0,0,0,0,0,0],\
+        # Level 4
+        [2,1,0,0,0,0,0,0,0],\
+        # Level 5
+        [3,1,1,0,0,0,0,0,0],\
+        # Level 6
+        [3,1,1,0,0,0,0,0,0],\
+        # Level 7
+        [3,2,1,1,0,0,0,0,0],\
+        # Level 8
+        [3,3,2,1,1,0,0,0,0],\
+        # Level 9
+        [3,2,2,1,1,0,0,0,0],\
+        # Level 10
+        [3,3,2,1,1,0,0,0,0],\
+        # Level 11
+        [3,3,3,2,2,1,0,0,0],\
+        # Level 12
+        [3,3,3,3,3,1,0,0,0],\
+        # Level 13
+        [4,4,4,3,3,1,0,0,0],\
+        # Level 14
+        [4,4,4,3,3,1,1,0,0],\
+        # Level 15
+        [4,4,4,4,4,1,1,0,0],\
+        # Level 16
+        [4,4,4,4,4,2,1,1,0],\
+        # Level 17
+        [4,4,4,4,4,2,2,1,0],\
+        # Level 18
+        [4,4,4,4,4,2,2,1,1],\
+        # Level 19
+        [4,4,4,4,4,2,2,2,1],\
+        # Level 20
+        [4,4,4,4,4,3,2,2,1]]
+    
+    return temporal-raider_spell_table[my_level - 1]
+
+def TemporalChampion_Spells(my_level):
+    temporal-champion_spell_table = [\
+        # Level 1
+        [1,0,0,0,0,0,0,0,0],
+        # Level 2
+        [1,0,0,0,0,0,0,0,0],\ 
+        # Level 3
+        [1,1,0,0,0,0,0,0,0],\
+        # Level 4
+        [2,1,0,0,0,0,0,0,0],\
+        # Level 5
+        [2,1,1,0,0,0,0,0,0],\
+        # Level 6
+        [2,1,1,0,0,0,0,0,0],\
+        # Level 7
+        [2,2,1,1,0,0,0,0,0],\
+        # Level 8
+        [2,2,2,1,0,0,0,0,0],\
+        # Level 9
+        [2,2,2,1,1,0,0,0,0],\
+        # Level 10
+        [2,2,2,1,1,0,0,0,0],\
+        # Level 11
+        [2,2,2,2,2,0,0,0,0],\
+        # Level 12
+        [2,2,2,2,2,1,0,0,0],\
+        # Level 13
+        [3,3,3,2,2,1,0,0,0],\
+        # Level 14
+        [3,3,3,2,2,1,1,0,0],\
+        # Level 15
+        [3,3,3,3,3,1,1,0,0],\
+        # Level 16
+        [3,3,3,3,3,2,1,1,0],\
+        # Level 17
+        [3,3,3,3,3,2,2,1,0],\
+        # Level 18
+        [3,3,3,3,3,2,2,1,1],\
+        # Level 19
+        [3,3,3,3,3,2,2,2,1],\
+        # Level 20
+        [3,3,3,3,3,2,2,2,1]]
+    
+    return temporal-champion_spell_table[my_level - 1]
 
 #--------------------------------------
 # Randomly assign a specialist school
 #  for a wizard
 #--------------------------------------
-def Wizard_Specialist(my_race, scores):
+def Chronomancer_Specialist(my_race, scores):
     specialist_table = [['Abjurer','Abjuration','Alteration and Illusion'],\
         ['Conjurer','Conjuration/Summoning','Greater Divination and Invocation'],\
         ['Diviner','Greater Divination','Conjuration/Summoning'],\

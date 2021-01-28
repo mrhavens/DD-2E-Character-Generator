@@ -319,10 +319,10 @@ def printPriestSpells(my_class,my_spells):
 #--------------------------------------
 # Print Priest Spells to CSV
 #--------------------------------------
-def csvPriestSpells(my_spells,my_name):
+def csvPriestSpells(my_spells,my_name,my_level):
 
     # Print spell list to character sheet directory
-    my_dir = '2E_Character_Sheets'
+    my_dir = 'Level_' + str(my_level) + '_2E_Character_Sheets'
     parent_dir = os.getcwd()
     path = os.path.join(parent_dir, my_dir)
     try:

@@ -117,7 +117,7 @@ def rollMethodVx(scores):
     scores[4] = 18
     scores[5] = 10
 
-    print (scores)
+    #print (scores)
     return scores
 
 #--------------------------------------
@@ -289,7 +289,7 @@ def sortScoreForFighter(scores):
     scores[4] = tScores[1]  # WIS  
     scores[5] = tScores[0]  # CHA
 
-    print(scores)
+    #print(scores)
     return scores
 
 
@@ -450,9 +450,9 @@ def sortScoreByClass(cRequest,scores):
         elif cRequest == 'Fighter/Cleric':
             tscores = sortScoreForCleric(scores)
         elif cRequest == 'Fighter/Mage':
-            tscores = sortScoreForMage(scores)
+            tscores = sortScoreForWizard(scores)
         elif cRequest == 'Mage/Thief':
-            tscores = sortScoreForMage(scores)
+            tscores = sortScoreForWizard(scores)
         elif cRequest == 'Fighter/Illusionist':
             tscores = sortScoreForIllusionist(scores)
         elif cRequest == 'Cleric/Illusionist':
